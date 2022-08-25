@@ -1,23 +1,23 @@
 <ng-container *ngIf="roster$ | async as roster">
-  <nz-page-header nzTitle="Roster manager" nzSubtitle="Manage & configure your roster">
+  <nz-page-header nzTitle="{{'Roster.title'|translate}}" nzSubtitle="{{'Roster.subtitle'|translate}}">
     <nz-page-header-extra>
       <button nz-button
               *ngIf="hasLocalstorageRoster"
               nzType="primary"
               nz-popconfirm
-              nzPopconfirmTitle="This will overwrite your current roster with previously saved local data and clear it from localstorage !"
+              nzPopconfirmTitle="{{'Roster.importPopconfirmTitle'|translate}}"
               (nzOnConfirm)="importFromLocalStorage(roster.$key)">
-        Import from LocalStorage
+        {{'Roster.importBtn'|translate}}
       </button>
-      <button nz-button (click)="exportRoster(roster)" nz-tooltip nzTooltipTitle="Export roster">
+      <button nz-button (click)="exportRoster(roster)" nz-tooltip nzTooltipTitle="{{'Roster.exportTooltip'|translate}}">
         <i nz-icon nzType="upload" nzTheme="outline"></i>
       </button>
-      <button nz-button (click)="importRoster()" nz-tooltip nzTooltipTitle="Import roster">
+      <button nz-button (click)="importRoster()" nz-tooltip nzTooltipTitle="{{'Roster.importTooltip'|translate}}">
         <i nz-icon nzType="download" nzTheme="outline"></i>
       </button>
     </nz-page-header-extra>
   </nz-page-header>
-  <nz-card nzTitle="Characters">
+  <nz-card nzTitle="{{'Roster.Characters.title'|translate}}">
     <nz-list [nzDataSource]="roster.characters" cdkDropList [cdkDropListData]="roster.characters" (cdkDropListDropped)="drop(roster, $event)">
       <nz-list-item *ngFor="let character of roster.characters;trackBy: trackByCharacter"
                     [nzContent]="noteEditor"
@@ -26,7 +26,7 @@
         <ng-template #noteEditor>
           <div class="note-editor">
           <textarea nz-input
-                    placeholder="Custom note, you also can use it to set your BiFrost information or song of return location"
+                    placeholder="{{'Roster.Characters.customNotePlaceholder'|translate}}"
                     cols="50"
                     rows="3"
                     [(ngModel)]="character.note"
@@ -52,13 +52,13 @@
         </ng-template>
         <ng-template #setPrivateAction>
           <label nz-checkbox [(ngModel)]="character.isPrivate" (ngModelChange)="saveCharacter(character, roster)"></label>
-          Private
-          <i nz-icon nzType="info-circle" nzTheme="outline" nz-tooltip nzTooltipTitle="Do not share this character with your friends"></i>
+          {{'Roster.Characters.private'|translate}}
+          <i nz-icon nzType="info-circle" nzTheme="outline" nz-tooltip nzTooltipTitle="{{'Roster.Characters.privateTooltip'|translate}}"></i>
         </ng-template>
         <ng-template #setLazyAction>
           <label nz-checkbox [(ngModel)]="character.lazy" (ngModelChange)="saveCharacter(character, roster)"></label>
-          Lazy
-          <i nz-icon nzType="info-circle" nzTheme="outline" nz-tooltip nzTooltipTitle="Only resets after 3 days"></i>
+          {{'Roster.Characters.lazy'|translate}}
+          <i nz-icon nzType="info-circle" nzTheme="outline" nz-tooltip nzTooltipTitle="{{'Roster.Characters.lazyTooltip'|translate}}"></i>
         </ng-template>
         <ng-template #setClassAction>
           <nz-select class="class-selector"
@@ -66,18 +66,18 @@
                      (ngModelChange)="saveCharacter(character, roster)"
                      nzShowSearch>
             <nz-option *ngFor="let row of classes"
-                       [nzValue]="row.id" [nzLabel]="row.name"
+                       [nzValue]="row.id" [nzLabel]="'Classes.'+row.name|translate"
                        nzCustomContent>
               <div class="class-row">
                 <img src="./assets/icons/classes/{{row.icon}}" alt="" class="class-icon">
-                <div>{{row.name}}</div>
+                <div>{{'Classes.'+row.name|translate}}</div>
               </div>
             </nz-option>
           </nz-select>
         </ng-template>
         <ng-template #deleteAction>
           <button nz-button nzDanger nz-popconfirm
-                  nzPopconfirmTitle="Are you sure?"
+                  nzPopconfirmTitle="{{'Roster.Characters.removePopconfirmTitle'|translate}}"
                   (nzOnConfirm)="removeCharacter(character, roster)" nzShape="circle">
             <i nz-icon nzType="delete" nzTheme="outline"></i>
           </button>
@@ -86,32 +86,32 @@
     </nz-list>
   </nz-card>
   <nz-divider></nz-divider>
-  <nz-card nzTitle="Add a character">
+  <nz-card nzTitle="{{'Roster.AddCharacter.title'|translate}}">
     <form nz-form [formGroup]="form" (ngSubmit)="addCharacter(roster)">
       <nz-form-item>
-        <nz-form-control nzErrorTip="Please input a character name">
+        <nz-form-control nzErrorTip="{{'Roster.AddCharacter.nameError'|translate}}">
           <nz-input-group nzPrefixIcon="user">
-            <input type="text" nz-input formControlName="name" placeholder="Name" />
+            <input type="text" nz-input formControlName="name" placeholder="{{'Roster.AddCharacter.namePlaceholder'|translate}}" />
           </nz-input-group>
         </nz-form-control>
       </nz-form-item>
       <nz-form-item>
-        <nz-form-control nzErrorTip="Please input an ilvl">
+        <nz-form-control nzErrorTip="{{'Roster.AddCharacter.ilvlError'|translate}}">
           <nz-input-group nzPrefixIcon="info">
-            <input nz-input formControlName="ilvl" placeholder="Item Level" type="number" />
+            <input nz-input formControlName="ilvl" placeholder="{{'Roster.AddCharacter.ilvlPlaceholder'|translate}}" type="number" />
           </nz-input-group>
         </nz-form-control>
       </nz-form-item>
       <nz-form-item>
-        <nz-form-control nzErrorTip="Please input a class">
-          <nz-input-group nzAddOnBefore="Class">
+        <nz-form-control nzErrorTip="{{'Roster.AddCharacter.classError'|translate}}">
+          <nz-input-group nzAddOnBefore="{{'Roster.AddCharacter.classPlaceholder'|translate}}">
             <nz-select formControlName="class" class="class-selector" nzShowSearch>
               <nz-option *ngFor="let row of classes"
                          [nzValue]="row.id" [nzLabel]="row.name"
                          nzCustomContent class="class-row">
                 <div class="class-row">
                   <img src="./assets/icons/classes/{{row.icon}}" alt="" class="class-icon">
-                  <div>{{row.name}}</div>
+                  <div>{{'Classes.'+row.name|translate}}</div>
                 </div>
               </nz-option>
             </nz-select>
@@ -120,11 +120,11 @@
       </nz-form-item>
       <nz-form-item>
         <label nz-checkbox formControlName="lazy">
-          Lazy
-          <i nz-icon nzType="info-circle" nzTheme="outline" nz-tooltip nzTooltipTitle="Only resets after 3 days"></i>
+          {{'Roster.Characters.lazy'|translate}}
+          <i nz-icon nzType="info-circle" nzTheme="outline" nz-tooltip nzTooltipTitle="{{'Roster.Characters.lazyTooltip'|translate}}"></i>
         </label>
       </nz-form-item>
-      <button nz-button [nzType]="'primary'" [disabled]="!form.valid">Add</button>
+      <button nz-button [nzType]="'primary'" [disabled]="!form.valid">{{'Roster.AddCharacter.action'|translate}}</button>
     </form>
   </nz-card>
 </ng-container>

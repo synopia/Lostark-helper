@@ -1,0 +1,85 @@
+{
+  "MenuItem": {
+    "Home": "Home",
+    "Helpers": "Helpers",
+    "Checklist": "Checklist",
+    "GoldPlanner": "Gold Planner",
+    "MariOptimizer": "Mari Optimizer",
+    "HoningCostOptimizer": "Honing Cost Optimizer",
+    "Gearsets": "Gearsets",
+    "MoreCoolTools": "More cool tools",
+    "PartyHelpers": "PartyHelpers",
+    "PartyPlanner": "Party Planner",
+    "Friends": "Friends",
+    "Guild": "Guild",
+    "YourGuilds": "Your Guilds",
+    "PlannedTasks": "Planned tasks",
+    "Configuration": "Configuration",
+    "Roster": "Roster",
+    "TasksManager": "Tasks Manager",
+    "Availability": "Availability",
+    "Settings": "Settings"
+  },
+  "Classes": {
+    "Destroyer": "Destroyer",
+    "Arcana": "Arcana",
+    "Berserker": "Berserker",
+    "Wardancer": "Wardancer",
+    "Deadeye": "Deadeye",
+    "Gunlancer": "Gunlancer",
+    "Gunner": "Gunner",
+    "Scrapper": "Scrapper",
+    "Mage": "Mage",
+    "Warrior": "Warrior",
+    "Soulfist": "Soulfist",
+    "Sharpshooter": "Sharpshooter",
+    "Artillerist": "Artillerist",
+    "Bard": "Bard",
+    "Glaivier": "Glaivier",
+    "Assassin": "Assassin",
+    "Deathblade": "Deathblade",
+    "Shadowhunter": "Shadowhunter",
+    "Paladin": "Paladin",
+    "Gunslinger": "Gunslinger",
+    "Striker": "Striker",
+    "Sorceress": "Sorceress"
+  },
+  "Checklist": {
+    "title": "Checklist",
+    "subtitle": "Track your daily and weekly tasks with automated resets and rest bonus support",
+    "tooltipTitle": "Ctrl + Click a task to mark it as entirely done in a single click",
+    "noCharactersMsg": "No characters in your roster, please add some in the roster page",
+    "noCharactersLink": "Click here to navigate to the roster manager and add your first character"
+  },
+  "Roster": {
+    "title": "Roster manager",
+    "subtitle": "Manage & configure your roster",
+    "importPopconfirmTitle": "This will overwrite your current roster with previously saved local data and clear it from localstorage !",
+    "importBtn": "Import from LocalStorage",
+    "exportTooltip": "Export roster",
+    "importTooltip": "Import roster",
+    "Characters": {
+      "title": "Characters",
+      "private": "Private",
+      "privateTooltip": "Do not share this character with your friends",
+      "lazy": "Lazy",
+      "lazyTooltip": "Only resets after 3 days",
+      "customNotePlaceholder": "Custom note, you also can use it to set your BiFrost information or song of return location",
+      "removePopconfirmTitle": "Are you sure?"
+    },
+    "AddCharacter": {
+      "title": "Add a character",
+      "nameError": "Please input a character name",
+      "namePlaceholder": "Name",
+      "ilvlError": "Please input an ilvl",
+      "ilvlPlaceholder": "Item level",
+      "classError": "Please input a class",
+      "classPlaceholder": "Class",
+      "action": "Add"
+    }
+  },
+  "Reset": {
+    "nextDaily": "Next daily reset: ",
+    "nextWeekly": "Next weekly reset: "
+  }
+}

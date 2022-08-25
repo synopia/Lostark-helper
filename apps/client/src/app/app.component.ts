@@ -10,6 +10,7 @@ import { filter, pairwise, startWith } from "rxjs";
 import { NzMessageService } from "ng-zorro-antd/message";
 import { LostarkRegion } from "./model/lostark-region";
 import { LAHUser } from "./model/lah-user";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "lostark-helper-root",
@@ -39,8 +40,14 @@ export class AppComponent implements OnInit {
               private modalService: NzModalService,
               private localStorageService: LocalStorageService,
               private friendInvitesService: FriendInvitesService,
-              private message: NzMessageService
+              private message: NzMessageService,
+              private translate: TranslateService
   ) {
+    translate.addLangs(["en", "de"])
+    translate.setDefaultLang("en")
+    const browserLang = translate.getBrowserLang()
+    translate.use(browserLang?.match(/en|de/) ? browserLang: 'en')
+
     friendInvitesService.invitesReceived$
       .pipe(
         startWith([]),

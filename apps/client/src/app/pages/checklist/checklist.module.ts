@@ -15,6 +15,7 @@ import { NzSwitchModule } from "ng-zorro-antd/switch";
 import { NzStatisticModule } from "ng-zorro-antd/statistic";
 import { NzGridModule } from "ng-zorro-antd/grid";
 import { NzDividerModule } from "ng-zorro-antd/divider";
+import { TranslateModule } from "@ngx-translate/core";
 
 const routes = [{
   path: "",
@@ -23,9 +24,7 @@ const routes = [{
 
 @NgModule({
   declarations: [ChecklistComponent],
-  exports: [
-    ChecklistComponent
-  ],
+  exports: [ChecklistComponent],
   imports: [
     CommonModule,
 
@@ -43,8 +42,8 @@ const routes = [{
     NzSwitchModule,
     NzStatisticModule,
     NzGridModule,
-    NzDividerModule
-  ]
+    NzDividerModule,
+    TranslateModule,
+  ],
 })
-export class ChecklistModule {
-}
+export class ChecklistModule {}

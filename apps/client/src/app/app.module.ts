@@ -6,7 +6,7 @@ import { en_US, NZ_I18N } from "ng-zorro-antd/i18n";
 import { registerLocaleData } from "@angular/common";
 import en from "@angular/common/locales/en";
 import { FormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from "./app-routing.module";
 import { IconsProviderModule } from "./icons-provider.module";
@@ -24,8 +24,14 @@ import { NzModalModule } from "ng-zorro-antd/modal";
 import { NzMessageModule } from "ng-zorro-antd/message";
 import { NzInputModule } from "ng-zorro-antd/input";
 import { NzSelectModule } from "ng-zorro-antd/select";
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
 registerLocaleData(en);
+
+export function HttpLoaderFactory(http:HttpClient) {
+  return new TranslateHttpLoader(http)
+}
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,6 +39,13 @@ registerLocaleData(en);
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps:[HttpClient]
+      }
+    }),
     BrowserAnimationsModule,
     AppRoutingModule,
     IconsProviderModule,

@@ -1,0 +1,87 @@
+{
+  "MenuItem": {
+    "Home": "Home",
+    "Helpers": "Helfer",
+    "Checklist": "Checkliste",
+    "GoldPlanner": "Goldplaner",
+    "MariOptimizer": "Mari Optimierer",
+    "HoningCostOptimizer": "Aufwertungskosten",
+    "Gearsets": "Ausrüstung",
+    "MoreCoolTools": "Mehr coole Tools",
+    "PartyHelpers": "Gruppenhelfer",
+    "PartyPlanner": "Gruppenplaner",
+    "Friends": "Freunde",
+    "Guild": "Gilde",
+    "YourGuilds": "Deine Gilden",
+    "PlannedTasks": "Aufgaben",
+    "Configuration": "Konfiguration",
+    "Roster": "Kader",
+    "TasksManager": "Aufgabenmanager",
+    "Availability": "Verfügbarkeit",
+    "Settings": "Einstellungen"
+
+  },
+  "Classes": {
+    "Destroyer": "Zerstörer",
+    "Arcana": "Arkana",
+    "Berserker": "Berserker",
+    "Wardancer": "Kriegstänzer",
+    "Deadeye": "Todesschütze",
+    "Gunlancer": "Pistolenlanzer",
+    "Gunner": "Kanonier",
+    "Scrapper": "Scrapper",
+    "Mage": "Magierin",
+    "Warrior": "Krieger",
+    "Soulfist": "Seelenfaust",
+    "Sharpshooter": "Scharfschütze",
+    "Artillerist": "Artillerist",
+    "Bard": "Bardin",
+    "Glavier": "Lanzenträgerin",
+    "Assassin": "Assassinin",
+    "Deathblade": "Todesklinge",
+    "Shadowhunter": "Schattenjägerin",
+    "Paladin": "Paladin",
+    "Gunslinger": "Kunstschützin",
+    "Striker": "Striker",
+    "Sorceress": "Zauberin"
+  },
+
+  "Checklist": {
+    "title": "Checkliste",
+    "subtitle": "Verfolge deine täglichen und wöchentlichen Aufgaben mit automatischen Resets and Erholungsbonusunterstüztung",
+    "tooltipTitle": "Strg + Klick auf eine Aufgabe um sie als vollständig abgeschlossen zu markieren",
+    "noCharactersMsg": "Es befinden sich keine Charaktere in deinem Kader. Bitte füge welche in der Kaderübersicht hinzu.",
+    "noCharactersLink": "Hier klicken um zur Kaderübersicht zu gelangen und deinen ersten Charakter hinzuzufügen"
+  },
+  "Roster": {
+    "title": "Kaderübersicht",
+    "subtitle": "Verwalte und konfiguriere deinen Kader",
+    "importPopconfirmTitle": "Überschreibt deinen aktuellen Kader mit vorher gespeicherten Daten und leer den LocalStorage!",
+    "importBtn": "Importiert aus dem LocalStorage",
+    "exportTooltip": "Kader exportieren",
+    "importTooltip": "Kader importieren",
+    "Characters": {
+      "title": "Charaktere",
+      "private": "Privat",
+      "privateTooltip": "Diesen Charakter nicht mit Freunden teilen",
+      "lazy": "Faul",
+      "lazyTooltip": "Reset nur nach 3 Tagen",
+      "customNotePlaceholder": "Notizen",
+      "removePopconfirmTitle": "Bist du sicher?"
+    },
+    "AddCharacter": {
+      "title": "Charakter hinzufügen",
+      "nameError": "Bitte gib einen Charakternamen an",
+      "namePlaceholder": "Name",
+      "ilvlError": "Bitte gib ein Itemlevel an",
+      "ilvlPlaceholder": "Itemlevel",
+      "classError": "Bitte gib eine Klasse an",
+      "classPlaceholder": "Klasse",
+      "action": "Hinzufügen"
+    }
+  },
+  "Reset": {
+    "nextDaily": "Nächster täglicher Reset: ",
+    "nextWeekly": "Nächster wöchentlicher Reset: "
+  }
+}
